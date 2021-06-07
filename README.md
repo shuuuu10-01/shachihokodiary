@@ -1,4 +1,7 @@
 # ShachihokoDiary
+ハックツハッカソン -ステゴ杯-
+2021/6/19~20
+in オンライン
 
 ## Build Setup
 
