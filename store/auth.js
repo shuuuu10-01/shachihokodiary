@@ -32,11 +32,10 @@ export const actions = {
             email: user.email,
             id: user.uid
           };
+          console.log(user,"resolve")
           commit("setUser", data)
-          commit('setNowlogin', true)
           resolve()
-        }else {
-          // ログインできなかった場合
+        } else {
           reject()
         }
       })
