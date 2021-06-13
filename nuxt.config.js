@@ -1,3 +1,13 @@
+require("dotenv").config();
+const { API_KEY,
+        AUTH_DOMAIN,
+        PROJECT_ID,
+        STORAGE_BUCKET,
+        MESSAGING_SENDER_ID,
+        APP_ID,
+        MEASUREMENT_ID 
+      } = process.env;
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -32,9 +42,32 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/firebase'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+
+  env: {
+    API_KEY,
+    AUTH_DOMAIN,
+    PROJECT_ID,
+    STORAGE_BUCKET,
+    MESSAGING_SENDER_ID,
+    APP_ID,
+    MEASUREMENT_ID 
+  },
+
+  firebase: {
+    config: {
+      apiKey: API_KEY,
+      authDomain: AUTH_DOMAIN,
+      projectId: PROJECT_ID,
+      storageBucket: STORAGE_BUCKET,
+      messagingSenderId: MESSAGING_SENDER_ID,
+      appId: APP_ID,
+      measurementId: MEASUREMENT_ID
+    }
   }
 }
