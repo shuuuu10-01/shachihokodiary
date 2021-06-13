@@ -31,6 +31,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~/plugins/firebase.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -68,6 +69,9 @@ export default {
       messagingSenderId: MESSAGING_SENDER_ID,
       appId: APP_ID,
       measurementId: MEASUREMENT_ID
+    },
+    services: {
+      auth: true // Just as example. Can be any other service.
     }
   }
 }

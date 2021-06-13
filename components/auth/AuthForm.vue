@@ -41,27 +41,46 @@ export default {
     return {
       name: '',
       email: '',
-      password: ''
+      password: '',
+      id: ''
     }
   },
   methods: {
     authFirebase() {
       if (this.signup) {
-        this.signin()
+        this.signupFirebase()
       } else {
         this.login()
       }
     },
-    async signin() {
+    async signupFirebase() {
       await this.$fire.auth.createUserWithEmailAndPassword(this.email,this.password)
       
       const user = await this.$fire.auth.currentUser;
-      user.updateProfile({displayName: this.name})
+      await user.updateProfile({displayName: this.name})
+      const userdata = {
+        name: this.name,
+        email: user.email,
+        id: user.uid
+      }
+      this.$store.dispatch('auth/setUser',userdata)
+      this.$router.push('/home')
     },
-    login () {
-      this.$fire.auth.signInWithEmailAndPassword(this.email, this.password)
-      .then(user => {
-        console.log(user)
+    async login () {
+      await this.$fire.auth.signInWithEmailAndPassword(this.email, this.password)
+      .then(result => {
+        const userdata = {
+          name: result.user.displayName,
+          email: result.user.email,
+          id: result.user.uid
+        }
+        console.log(result)
+        this.$store.dispatch('auth/setUser',userdata)
+        this.$router.push('/home')
+      })
+      .catch(result => {
+        console.log(result)
+        alert(result.message)
       })
     },
     displaySubmit() {
