@@ -1,7 +1,10 @@
 import  firebase from '~/plugins/firebase.js'
+const db = firebase.firestore();
+const diaryRef = db.collection('diary')
 
 export const state = () => ({
-  user: null
+  user: null,
+  diaryList: []
 })
 
 export const getters = {
@@ -16,6 +19,12 @@ export const getters = {
 export const mutations = {
   setUser(state, payload) {
     state.user = payload
+  },
+  addDiary(state, payload) {
+    state.diaryList.push(payload)
+  },
+  clearDiary(state) {
+    state.diaryList = []
   }
 }
 
@@ -39,6 +48,32 @@ export const actions = {
           reject()
         }
       })
+    })
+  },
+  async fetchDiaryList ({ state, commit }) {
+    await diaryRef.where('user_id', '==', state.user.id).orderBy('date', 'asc').get()
+      .then(result => {
+        commit('clearDiary')
+        result.forEach(doc => {
+          console.log(doc.data())
+          commit('addDiary', doc.data())
+        })
+      })
+  },
+  postDiary({ commit, state }, { content, date, image }) {
+    const postData = {
+      user_id: state.user.id,
+      content: content,
+      date: date,
+      image: image
+    }
+    diaryRef.add(postData)
+    .then(result => {
+      console.log(result)
+      commit('addDiary', postData)
+    })
+    .catch(error => {
+      console.log('error', error)
     })
   }
 }

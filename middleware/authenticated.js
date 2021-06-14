@@ -11,4 +11,5 @@ export default async function({ store, route, redirect }) {
         return redirect("/login");
       }
     })
+  await store.dispatch('auth/fetchDiaryList')
 }
