@@ -11,5 +11,7 @@ export default async function({ store, route, redirect }) {
         return redirect("/login");
       }
     })
-  await store.dispatch('auth/fetchDiaryList')
+  if (store.getters["auth/isAutheticated"]) {
+    await store.dispatch("auth/fetchDiaryList");
+  }
 }
