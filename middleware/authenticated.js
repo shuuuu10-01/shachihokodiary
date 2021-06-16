@@ -7,7 +7,7 @@ export default async function({ store, route, redirect }) {
       }
     })
     .catch(()=>{
-      if (route.name !== "login" && route !== 'signup') {
+      if (route.name !== "login" && route.name !== 'signup') {
         return redirect("/login");
       }
     })
