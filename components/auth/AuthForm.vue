@@ -2,37 +2,41 @@
   <div class="close_note">
     <div class="form">
       <form @submit.prevent="authFirebase">
-        <label for="username" v-if="signup">ユーザー名</label>
-        <input 
-          v-model="name"
-          name="name"
-          type="text"
-          placeholder="ユーザー名"
-          required
-          v-if="signup"
-          id="username"
-        />
-        <label for="mailaddress">メールアドレス</label>
-        <input
-          v-model="email"
-          name="email"
-          type="email"
-          placeholder="メールアドレス"
-          required
-          id="mailaddress"
-        />
-        <label for="password">ユーザー名</label>
-        <input
-          v-model="password"
-          name="password"
-          type="password"
-          placeholder="パスワード"
-          required
-          id="password"
-        />
-        <button type="submit">{{ displaySubmit() }}</button>
+        <div>
+          <label for="username" v-if="signup">User Name</label>
+          <input 
+            v-model="name"
+            name="name"
+            type="text"
+            required
+            v-if="signup"
+            id="username"
+          />
+        </div>
+        <div>
+          <label for="mailaddress">Mail Address</label>
+          <input
+            v-model="email"
+            name="email"
+            type="email"
+            required
+            id="mailaddress"
+          />
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input
+            v-model="password"
+            name="password"
+            type="password"
+            required
+            id="password"
+          />
+        </div>
+        <div>
+          <button type="submit">{{ displaySubmit() }}</button>
+        </div>
       </form>
-      <a href="https://www.freepik.com/photos/background">Background photo created by freepik - www.freepik.com</a>
     </div>
   </div>
 </template>
@@ -101,16 +105,38 @@ export default {
 
 <style>
 .close_note {
-  background-image: url("../../assets/img/bg_close_note.png") no-repeat fixed;
-  background-size: cover;
-  background-position: center;
+  display: block;
+  background-image: url("../../assets/img/bg_close_note.png");
+  background-size: 350px;
+  background-repeat: no-repeat;
   z-index: 100;
-  text-align: center;
-  width: 50%;
-  height: 100%;
+  margin: 100px;
+  width: 335px;
+  height: 470px;
 }
 
 .form {
-  position: relative;
+  padding-top: 230px;
+  font-size: 15px;
+  font-family: cursive;
+  color: rgb(255, 255, 231);
 }
+
+label, input {
+  display: block;
+}
+
+input {
+  width: 40%;
+  margin-left: 120px;
+  color:rgb(255, 255, 231);
+  background-color: rgba(255, 255, 255, 0);
+  border-style: none;
+  
+}
+
+label {
+  margin-left: 30px;
+}
+
 </style>

@@ -1,19 +1,27 @@
 <template>
   <div>
     <Nuxt />
+    <a href="https://www.freepik.com/photos/background" class="bg-photolink">Background photo created by freepik - www.freepik.com</a>
   </div>
 </template>
 
 <style>
 body {
   background: url("../assets/img/bg_wood.jpg") no-repeat fixed;
-  background-size: cover;
-  background-position: center;
+  background-size: 1980px 1024px;
+  text-align: center;
+  z-index: 0;
   /* background: url('https://pbs.twimg.com/profile_banners/1289884632637349888/1613001450/1080x360') no-repeat 100% 100% fixed;
   background-position: center;
   background-size: cover;
   -webkit-background-size: cover; */
 }
+
+.bg-photolink {
+  bottom: 10px;
+  right: 10px;
+}
+
 html {
   font-family:
     'Source Sans Pro',
