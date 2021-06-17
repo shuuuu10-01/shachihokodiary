@@ -1,30 +1,39 @@
 <template>
-  <div>
-    <form @submit.prevent="authFirebase">
-      <input 
-        v-model="name"
-        name="name"
-        type="text"
-        placeholder="ユーザー名"
-        required
-        v-if="signup"
-      />
-      <input
-        v-model="email"
-        name="email"
-        type="email"
-        placeholder="メールアドレス"
-        required
-      />
-      <input
-        v-model="password"
-        name="password"
-        type="password"
-        placeholder="パスワード"
-        required
-      />
-      <button type="submit">{{ displaySubmit() }}</button>
-    </form>
+  <div class="close_note">
+    <div class="form">
+      <form @submit.prevent="authFirebase">
+        <label for="username" v-if="signup">ユーザー名</label>
+        <input 
+          v-model="name"
+          name="name"
+          type="text"
+          placeholder="ユーザー名"
+          required
+          v-if="signup"
+          id="username"
+        />
+        <label for="mailaddress">メールアドレス</label>
+        <input
+          v-model="email"
+          name="email"
+          type="email"
+          placeholder="メールアドレス"
+          required
+          id="mailaddress"
+        />
+        <label for="password">ユーザー名</label>
+        <input
+          v-model="password"
+          name="password"
+          type="password"
+          placeholder="パスワード"
+          required
+          id="password"
+        />
+        <button type="submit">{{ displaySubmit() }}</button>
+      </form>
+      <a href="https://www.freepik.com/photos/background">Background photo created by freepik - www.freepik.com</a>
+    </div>
   </div>
 </template>
 
@@ -89,3 +98,19 @@ export default {
   }
 }
 </script>
+
+<style>
+.close_note {
+  background-image: url("../../assets/img/bg_close_note.png") no-repeat fixed;
+  background-size: cover;
+  background-position: center;
+  z-index: 100;
+  text-align: center;
+  width: 50%;
+  height: 100%;
+}
+
+.form {
+  position: relative;
+}
+</style>

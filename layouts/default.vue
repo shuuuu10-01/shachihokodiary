@@ -5,6 +5,15 @@
 </template>
 
 <style>
+body {
+  background: url("../assets/img/bg_wood.jpg") no-repeat fixed;
+  background-size: cover;
+  background-position: center;
+  /* background: url('https://pbs.twimg.com/profile_banners/1289884632637349888/1613001450/1080x360') no-repeat 100% 100% fixed;
+  background-position: center;
+  background-size: cover;
+  -webkit-background-size: cover; */
+}
 html {
   font-family:
     'Source Sans Pro',
