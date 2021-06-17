@@ -107,14 +107,16 @@ export default {
 
 <style>
 .close_note {
+  position: absolute;
   display: block;
   background-image: url("../../assets/img/bg_close_note.png");
   background-size: 400px;
   background-repeat: no-repeat;
   z-index: 100;
-  margin-left: 800px;
-  margin-right: 700px;
-  margin-top: 200px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   width: 400px;
   height: 570px;
 }
