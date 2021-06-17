@@ -128,6 +128,7 @@ export default {
 .form {
   padding-top: 273px;
   font-size: 15px;
+  line-height: 20px;
   font-family: cursive;
   color: rgb(255, 255, 231);
 }
@@ -138,6 +139,7 @@ label, input {
 
 input {
   width: 40%;
+  height: 22px;
   margin-left: 135px;
   color:rgb(255, 255, 231);
   background-color: #ffff0000;
