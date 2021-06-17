@@ -13,6 +13,8 @@
             id="username"
           />
         </div>
+        <div class="empty" v-if="!signup">
+        </div>
         <div>
           <label for="mailaddress">Mail Address</label>
           <input
@@ -34,7 +36,7 @@
           />
         </div>
         <div>
-          <button type="submit">{{ displaySubmit() }}</button>
+          <button type="submit" class="submit-button">{{ displaySubmit() }}</button>
         </div>
       </form>
     </div>
@@ -97,7 +99,7 @@ export default {
       })
     },
     displaySubmit() {
-      return this.signup ? "サインアップ" : "ログイン"
+      return this.signup ? "signup" : "login"
     }
   }
 }
@@ -107,16 +109,22 @@ export default {
 .close_note {
   display: block;
   background-image: url("../../assets/img/bg_close_note.png");
-  background-size: 350px;
+  background-size: 400px;
   background-repeat: no-repeat;
   z-index: 100;
-  margin: 100px;
-  width: 335px;
-  height: 470px;
+  margin-left: 800px;
+  margin-right: 700px;
+  margin-top: 200px;
+  width: 400px;
+  height: 570px;
+}
+
+.empty {
+  height: 42px;
 }
 
 .form {
-  padding-top: 230px;
+  padding-top: 273px;
   font-size: 15px;
   font-family: cursive;
   color: rgb(255, 255, 231);
@@ -128,15 +136,34 @@ label, input {
 
 input {
   width: 40%;
-  margin-left: 120px;
+  margin-left: 135px;
   color:rgb(255, 255, 231);
-  background-color: rgba(255, 255, 255, 0);
+  background-color: #ffff0000;
   border-style: none;
-  
+  font-family : inherit;
+}
+
+input:-webkit-autofill {
+  /* box-shadow: 0 0 0 1000px rgb(146, 149, 177) inset; */
+  -webkit-transition: background-color 9999s;
+  transition: background-color 9999s;
+  font-family : inherit;
 }
 
 label {
   margin-left: 30px;
+}
+
+.submit-button {
+  margin-top: 10px;
+  margin-left: 35px;
+  background-color: transparent;
+  border: 3px solid rgba(255, 255, 231, 0.822);
+  outline: none;
+  font-family : inherit;
+  color: rgb(255, 255, 231);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  cursor: pointer;
 }
 
 </style>

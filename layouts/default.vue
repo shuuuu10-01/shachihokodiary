@@ -11,15 +11,13 @@ body {
   background-size: 1980px 1024px;
   text-align: center;
   z-index: 0;
-  /* background: url('https://pbs.twimg.com/profile_banners/1289884632637349888/1613001450/1080x360') no-repeat 100% 100% fixed;
-  background-position: center;
-  background-size: cover;
-  -webkit-background-size: cover; */
 }
 
 .bg-photolink {
+  position: absolute;
   bottom: 10px;
   right: 10px;
+  color: rgb(153, 153, 153);
 }
 
 html {
