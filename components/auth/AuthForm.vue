@@ -40,6 +40,8 @@
         </div>
       </form>
     </div>
+    <img src="../../assets/img/pen_on_table.png" class="pen_on_table"/>
+    <img src="../../assets/img/coffee.png" class="coffee"/>
   </div>
 </template>
 
@@ -170,4 +172,17 @@ label {
   cursor: pointer;
 }
 
+.pen_on_table {
+  height: 70%;
+  position: absolute;
+  right: -50%;
+  bottom: -10%;
+}
+
+.coffee {
+  height: 70%;
+  position: absolute;
+  left: -150%;
+  top: -10%;
+}
 </style>
