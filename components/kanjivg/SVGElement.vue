@@ -17,8 +17,8 @@ export default {
   }),
   computed: {
     svg() {
-      this.no_svgs.forEach(exist_svg => {
-        if(this.name == exist_svg) {
+      this.no_svgs.forEach(no_svg => {
+        if(this.name == no_svg) {
           this.no_svgs_flag = true;
         }
       });
