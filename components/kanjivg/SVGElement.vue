@@ -8,13 +8,27 @@ export default {
     name: {
       type: String,
       required: true,
-      default: "0002c"
+      default: "03000"
     }
   },
+  data: () => ({
+    no_svgs: ["03000"],
+    no_svgs_flag: false
+  }),
   computed: {
     svg() {
-      return () =>
-        import(`@/node_modules/@madcat/kanjivg/dist/main/${this.name}.svg`);
+      this.no_svgs.forEach(exist_svg => {
+        if(this.name == exist_svg) {
+          this.no_svgs_flag = true;
+        }
+      });
+      if(this.no_svgs_flag)
+        return () =>
+          import(`@/assets/svg/${this.name}.svg`);
+      else
+        return () =>
+          import(`@/node_modules/@madcat/kanjivg/dist/main/${this.name}.svg`);
+
     }
   },
   updated: function() {
