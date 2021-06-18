@@ -28,8 +28,8 @@ export default {
       this.texts = [];
       this.svgpaths = [];
       this.texts = this.text.split("");
-      this.texts.forEach(e => {
-        this.svgpaths.push(("000" + e.charCodeAt(0).toString(16)).slice(-5));
+      this.texts.forEach((value, index) => {
+        this.svgpaths[index] = ("000" + value.charCodeAt(0).toString(16)).slice(-5);
       });
       console.log("svgpaths:[" + this.svgpaths + "]");
       this.btnFlag = true;
