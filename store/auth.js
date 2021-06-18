@@ -13,6 +13,9 @@ export const getters = {
   },
   isAutheticated(state) {
     return !!state.user
+  },
+  getDiaryList(state) {
+    return state.diaryList
   }
 }
 
