@@ -12,7 +12,7 @@ export default {
     }
   },
   data: () => ({
-    no_svgs: ["03000"],
+    no_svgs: ["03000", "00020"],
     no_svgs_flag: false
   }),
   computed: {
@@ -28,7 +28,6 @@ export default {
       else
         return () =>
           import(`@/node_modules/@madcat/kanjivg/dist/main/${this.name}.svg`);
-
     }
   },
   updated: function() {
