@@ -50,5 +50,8 @@ export default {
   height: 500px;
   flex-wrap: wrap;
   align-content: flex-start;
+  background-image: url(https://www.beiz.jp/images_P/paper/paper_00108.jpg);
+  padding: 10px;
+  margin-bottom: 30px;
 }
 </style>
