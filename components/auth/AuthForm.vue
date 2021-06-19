@@ -108,6 +108,10 @@ export default {
 </script>
 
 <style>
+@font-face {
+	font-family: 'MyFont1';
+	src: url(../../assets/font/DancingScript-VariableFont_wght.ttf);
+}
 .close_note {
   position: absolute;
   display: block;
@@ -131,7 +135,7 @@ export default {
   padding-top: 273px;
   font-size: 15px;
   line-height: 20px;
-  font-family: cursive;
+  font-family: MyFont1;
   color: rgb(255, 255, 231);
 }
 
@@ -150,10 +154,11 @@ input {
 }
 
 input:-webkit-autofill {
-  /* box-shadow: 0 0 0 1000px rgb(146, 149, 177) inset; */
   -webkit-transition: background-color 9999s;
   transition: background-color 9999s;
-  font-family : inherit;
+  -webkit-text-fill-color: rgb(255, 255, 231) !important;
+  font-family : MyFont1;
+  border-style: none;
 }
 
 label {
