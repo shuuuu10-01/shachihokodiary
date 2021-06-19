@@ -1,7 +1,7 @@
 <template>
   <div class="animation_field">
-    <img id="pen" src="@/assets/img/pen_write.png" >
-    <img id="shadow" src="@/assets/img/pen_shadow.png" >
+    <!-- <img id="pen" src="@/assets/img/pen_write.png" >
+    <img id="shadow" src="@/assets/img/pen_shadow.png" > -->
   </div>
 </template>
 
