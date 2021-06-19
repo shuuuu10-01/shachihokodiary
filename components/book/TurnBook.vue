@@ -7,13 +7,13 @@
       >
         <div class="flip_page_double hard">表紙</div>
         <template v-for="item in getDiaryList">
-          <left-page :content="item.content" :key="item.id" />
+          <left-page :content="item.content" :date="item.date" :key="item.id" />
           <right-page :image="item.image" :key="item.id" />
         </template>
         <div class="flip_page_double hard">裏表紙</div>
       </fw-turn>
     </div>
-    <button @click="check">check</button>
+    <!--<button @click="check">check</button>-->
   </div>
 </template>
 
@@ -48,7 +48,9 @@ export default {
 
 <style scoped>
   .turn-grid {
-    display: grid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     grid-template-columns: 1fr 1fr;
     width: 100%;
     height: 800px;
