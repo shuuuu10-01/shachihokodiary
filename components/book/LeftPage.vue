@@ -32,6 +32,7 @@ export default {
 .page {
   background-image: url(https://www.beiz.jp/images_P/paper/paper_00108.jpg);
   text-align: left;
+  box-shadow: inset rgb(0 0 0 / 30%) -10px 0px 14px 7px !important
 }
 .page p {
   padding-top: 70px;
