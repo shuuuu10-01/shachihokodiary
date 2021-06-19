@@ -1,6 +1,8 @@
 <template>
   <div class="turn-grid">
     <div>
+      <img src="../../assets/img/coffee.png" class="coffee"/>
+      <img src="../../assets/img/pen_on_table.png" class="pen_on_table"/>
       <fw-turn 
         class="turn"
         ref="fwTurn"
@@ -12,8 +14,11 @@
           <left-page :content="item.content" :date="item.date" :key="item.id" />
           <right-page :image="item.image" :key="item.id" />
         </template>
-        <div class="flip_page_double hard">コピーライト</div>
-        <div class="flip_page_double hard" id="back_cover_back">裏表紙の裏</div>
+        <div class="cache">
+			<p class="bg-photolink">サイトバックグラウンド～木目～</p>
+			<a href="https://www.freepik.com/photos/background" class="bg-photolink">Background photo created by freepik - www.freepik.com</a>
+        </div>
+        <div class="flip_page_double hard" id="back_cover_back"></div>
         <back-cover />
       </fw-turn>
     </div>
@@ -81,5 +86,28 @@ export default {
     background-image: url("../../assets/img/back_cover_back.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+  }
+  .cache .bg-photolink {
+	position: relative;
+	top: 20px;
+	left: 20px;
+	width: 350px;
+  }
+  .cache {
+	background-image: url(https://www.beiz.jp/images_P/paper/paper_00108.jpg);
+	text-align: left;
+	box-shadow: inset rgb(0 0 0 / 30%) -10px 0px 14px 7px !important
+  }
+  .coffee {
+    position: absolute;
+    right: 60%;
+    bottom: 60%;
+    height: 600px;
+  }
+  .pen_on_table {
+    position: absolute;
+    right: 60%;
+    bottom: 60%;
+    height: 600px;
   }
 </style>

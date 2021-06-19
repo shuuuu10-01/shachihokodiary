@@ -1,7 +1,6 @@
 <template>
   <div>
     <Nuxt />
-    <a href="https://www.freepik.com/photos/background" class="bg-photolink">Background photo created by freepik - www.freepik.com</a>
   </div>
 </template>
 
