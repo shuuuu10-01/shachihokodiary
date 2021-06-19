@@ -34,6 +34,9 @@ export default {
   text-align: left;
 }
 .page p {
-  padding: 10px;
+  padding-top: 70px;
+  padding-left: 20px;
+  border-bottom: solid 1px;
+  border-bottom-style: dotted;
 }
 </style>

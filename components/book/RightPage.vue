@@ -1,6 +1,5 @@
 <template>
   <div class="page">
-    <p>rightpage</p>
     <img :src="image" alt="diary">
   </div>
 </template>
@@ -18,6 +17,13 @@ export default {
 
 <style scoped>
 .page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: white;
+  background-image: url(https://www.beiz.jp/images_P/paper/paper_00108.jpg);
+}
+.page img {
+  max-width: 450px;
 }
 </style>
