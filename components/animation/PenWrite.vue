@@ -1,21 +1,22 @@
 <template>
   <div class="animation_field">
-    <img id="pen" src="@/assets/img/pen_write.png" >
-    <img id="shadow" src="@/assets/img/pen_shadow.png" >
+    <img id="pen" src="@/assets/img/pen_write.png" style="transform: translate(500px, 150px);">
+    <!-- <img id="shadow" src="@/assets/img/pen_shadow.png" > -->
   </div>
 </template>
 
 <script>
-const target = document.getElementById("shadow");
-const target2 = document.getElementById("pen");
-const startX =  50; // X座標の始点
+
+const target = document.getElementById('pen'); // アニメーションの対象
+const startX = 50; // X座標の始点
 const startY = 50; // Y座標の始点
-const endX = 500; // X座標の目標点
+const endX = 800; // X座標の目標点
 const endY = 150; // Y座標の目標点
 const diffX = endX - startX; // X座標の変化量
 const diffY = endY - startY; // Y座標の変化量
 const time = 1000; // 変化にかける時間 (ミリ秒)
-console.log(diffX);
+let progress = 0;
+
 // アップデートを実行する
 requestAnimationFrame(update);
 
@@ -36,12 +37,15 @@ function update(timestamp) {
     requestAnimationFrame(update);
   }
 }
-
+  
 </script>
 
 <style scoped>
+img {
+  transform: translate(20%, 20%);
+}
+
 #pen {
-  transform:translate;
   position:absolute; top:100px; left:100px;
   width: 15%;
   height: 15%;
@@ -49,7 +53,6 @@ function update(timestamp) {
 }
 
 #shadow{
-  transform:translate;
   position:absolute; top:50px; left:50px;
   width: 20%;
   height: 20%;
