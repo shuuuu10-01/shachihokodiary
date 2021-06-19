@@ -5,6 +5,49 @@
   </div>
 </template>
 
+<script>
+import BGSound_Cafe_1 from '~/assets/sounds/VSQSE_0601_cafe_1.mp3'
+import BGSound_Cafe_2 from '~/assets/sounds/VSQSE_0602_cafe_2.mp3'
+import BGSound_Library_1 from '~/assets/sounds/VSQSE_0591_library_1.mp3'
+import BGSound_Library_2 from '~/assets/sounds/VSQSE_0592_library_2.mp3'
+
+export default {
+  created() {
+    var num = 4;
+    var rand = Math.floor(Math.random() * (num - 1));;
+    console.log(rand)
+    switch (rand) {
+      case 0: 
+        const audio1 = new Audio(BGSound_Cafe_1) 
+        audio1.loop = true
+        audio1.volume = 0.1
+        audio1.play()
+        break;
+      case 1: 
+        const audio2 = new Audio(BGSound_Cafe_2)
+        audio2.loop = true
+        audio2.volume = 0.1
+        audio2.play()
+        break;
+      case 2: 
+        const audio3 = new Audio(BGSound_Library_1)
+        audio3.loop = true
+        audio3.volume = 0.1
+        audio3.play()
+        break;
+      case 3: 
+        const audio4 = new Audio(BGSound_Library_2)
+        audio4.loop = true
+        audio4.volume = 0.1
+        audio4.play()
+        break;
+      default:
+        break;
+    }
+  },
+}
+</script>
+
 <style>
 body {
   background: url("../assets/img/bg_wood.jpg") no-repeat fixed;
