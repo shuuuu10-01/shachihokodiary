@@ -1,30 +1,47 @@
 <template>
-  <div>
-    <form @submit.prevent="authFirebase">
-      <input 
-        v-model="name"
-        name="name"
-        type="text"
-        placeholder="ユーザー名"
-        required
-        v-if="signup"
-      />
-      <input
-        v-model="email"
-        name="email"
-        type="email"
-        placeholder="メールアドレス"
-        required
-      />
-      <input
-        v-model="password"
-        name="password"
-        type="password"
-        placeholder="パスワード"
-        required
-      />
-      <button type="submit">{{ displaySubmit() }}</button>
-    </form>
+  <div class="close_note">
+    <div class="form">
+      <form @submit.prevent="authFirebase">
+        <div>
+          <label for="username" v-if="signup">User Name</label>
+          <input 
+            v-model="name"
+            name="name"
+            type="text"
+            required
+            v-if="signup"
+            id="username"
+          />
+        </div>
+        <div class="empty" v-if="!signup">
+        </div>
+        <div>
+          <label for="mailaddress">Mail Address</label>
+          <input
+            v-model="email"
+            name="email"
+            type="email"
+            required
+            id="mailaddress"
+          />
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input
+            v-model="password"
+            name="password"
+            type="password"
+            required
+            id="password"
+          />
+        </div>
+        <div>
+          <button type="submit" class="submit-button">{{ displaySubmit() }}</button>
+        </div>
+      </form>
+    </div>
+    <img src="../../assets/img/pen_on_table.png" class="pen_on_table"/>
+    <img src="../../assets/img/coffee.png" class="coffee"/>
   </div>
 </template>
 
@@ -84,8 +101,88 @@ export default {
       })
     },
     displaySubmit() {
-      return this.signup ? "サインアップ" : "ログイン"
+      return this.signup ? "signup" : "login"
     }
   }
 }
 </script>
+
+<style>
+.close_note {
+  position: absolute;
+  display: block;
+  background-image: url("../../assets/img/bg_close_note.png");
+  background-size: 400px;
+  background-repeat: no-repeat;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 570px;
+}
+
+.empty {
+  height: 42px;
+}
+
+.form {
+  padding-top: 273px;
+  font-size: 15px;
+  line-height: 20px;
+  font-family: cursive;
+  color: rgb(255, 255, 231);
+}
+
+label, input {
+  display: block;
+}
+
+input {
+  width: 40%;
+  height: 22px;
+  margin-left: 135px;
+  color:rgb(255, 255, 231);
+  background-color: #ffff0000;
+  border-style: none;
+  font-family : inherit;
+}
+
+input:-webkit-autofill {
+  /* box-shadow: 0 0 0 1000px rgb(146, 149, 177) inset; */
+  -webkit-transition: background-color 9999s;
+  transition: background-color 9999s;
+  font-family : inherit;
+}
+
+label {
+  margin-left: 30px;
+}
+
+.submit-button {
+  margin-top: 10px;
+  margin-left: 35px;
+  background-color: transparent;
+  border: 3px solid rgba(255, 255, 231, 0.822);
+  outline: none;
+  font-family : inherit;
+  color: rgb(255, 255, 231);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  cursor: pointer;
+}
+
+.pen_on_table {
+  height: 70%;
+  position: absolute;
+  right: -50%;
+  bottom: -10%;
+}
+
+.coffee {
+  height: 70%;
+  position: absolute;
+  left: -150%;
+  top: -10%;
+}
+</style>
