@@ -7,8 +7,8 @@
         </span>
         <span class="link_collection">
             <p>リンク集</p>
-            <a href="https://twitter.com/c3_kyutech"><img src="../../assets/img/C3_logo.png" class="c3_logo"/></a>
-            <a href="https://hackz.team/"><img src="../../assets/img/icon_hacktu.png" class="hacktu_logo"/></a>
+            <a href="https://twitter.com/c3_kyutech" target="_blank"><img src="../../assets/img/C3_logo.png" class="c3_logo"/></a>
+            <a href="https://hackz.team/" target="_blank"><img src="../../assets/img/icon_hacktu.png" class="hacktu_logo"/></a>
         </span>
         <span class="bg-photolink" id="c_syacihoko">© 2021 しゃちほこ</span>
     </div>
