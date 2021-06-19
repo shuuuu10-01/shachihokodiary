@@ -27,8 +27,7 @@ export default {
   box-shadow: inset rgb(0 0 0 / 30%) 10px 0px 14px 7px !important
 }
 .page img {
-  max-width: 400px;
-  height: 400px;
+  height: 300px;
   object-fit: cover;
 }
 .page img#main {
@@ -36,12 +35,12 @@ export default {
 }
 .page img#left {
   position: absolute;
-  left: -29px;
-  bottom: -36px;
+  left: -19px;
+  bottom: 16px;
 }
 .page img#right {
   position: absolute;
-  right: -42px;
-  top: -36px;
+  right: -29px;
+  top: 15px;
 }
 </style>
