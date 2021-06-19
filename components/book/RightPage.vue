@@ -2,7 +2,7 @@
   <div class="page">
     <img id="main" :src="image" alt="diary">
     <img id="right" src="@/assets/img/tape_right.png" alt="tape">
-    <img id="left" src="@/assets/img/tape_left.png" alt="tape">
+    <img id="left" src="@/assets/img/tape_left.png" alt="tape" v-if="!edit">
   </div>
 </template>
 
@@ -12,6 +12,10 @@ export default {
     image: {
       type: String,
       required: true
+    },
+    edit: {
+      type: Boolean,
+      default: false
     }
   }
 }
