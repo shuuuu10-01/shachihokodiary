@@ -66,6 +66,7 @@ export default {
   }
   .turn {
     height: 535px;
+    filter: drop-shadow(-3px 5px 10px black);
   }
   .flip_page_double {
     width: 760px;
