@@ -8,7 +8,9 @@
 <script>
 import SVGAnimation from '../kanjivg/SVGAnimation.vue'
 export default {
-  components: { SVGAnimation },
+  components: { 
+    SVGAnimation,
+  },
   props: {
     content: {
       type: String,
