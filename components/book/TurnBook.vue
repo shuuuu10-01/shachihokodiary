@@ -7,19 +7,16 @@
         class="turn"
         ref="fwTurn"
       >
-        <front-cover/>
-        <div class="flip_page_double hard">空白</div>
-        <div class="flip_page_double hard">空白</div>
+        <front-cover class="flip_page_double hard"/>
+        <div class="flip_page_double hard" id="front_cover_back"></div>
+        <div class="front_empty"></div>
         <template v-for="item in getDiaryList">
           <left-page :content="item.content" :date="item.date" :key="item.id" />
           <right-page :image="item.image" :key="item.id" />
         </template>
-        <div class="cache">
-			<p class="bg-photolink">サイトバックグラウンド～木目～</p>
-			<a href="https://www.freepik.com/photos/background" class="bg-photolink">Background photo created by freepik - www.freepik.com</a>
-        </div>
+        <cache/>
         <div class="flip_page_double hard" id="back_cover_back"></div>
-        <back-cover />
+        <back-cover class="flip_page_double hard"/>
       </fw-turn>
     </div>
     <!-- <button @click="check">check</button> -->
@@ -32,6 +29,7 @@ import LeftPage from './LeftPage.vue'
 import RightPage from './RightPage.vue'
 import BackCover from './BackCover.vue'
 import FrontCover from './FrontCover.vue'
+import Cache from './Cache.vue'
 
 export default {
   components: { 
@@ -39,7 +37,8 @@ export default {
     LeftPage,
     RightPage,
     BackCover,
-    FrontCover
+    FrontCover,
+    Cache
   },
   computed: {
     getDiaryList () {
@@ -83,21 +82,20 @@ export default {
     background-size: 300px 400px;
   }
 
-  #back_cover_back {
+  #back_cover_back, #front_cover_back {
     background-image: url("../../assets/img/back_cover_back.jpg");
     background-repeat: no-repeat;
     background-size: cover;
   }
-  .cache .bg-photolink {
-	position: relative;
-	top: 20px;
-	left: 20px;
-	width: 350px;
+  #back_cover_back {
+    box-shadow: inset rgb(0 0 0 / 30%) 10px 0px 14px 7px !important;
   }
-  .cache {
-	background-image: url(https://www.beiz.jp/images_P/paper/paper_00108.jpg);
-	text-align: left;
-	box-shadow: inset rgb(0 0 0 / 30%) -10px 0px 14px 7px !important
+  #front_cover_back{
+    box-shadow: inset rgb(0 0 0 / 30%) -10px 0px 14px 7px !important;
+  }
+  .front_empty {
+    background-image: url(https://www.beiz.jp/images_P/paper/paper_00108.jpg);
+    box-shadow: inset rgb(0 0 0 / 30%) 10px 0px 14px 7px !important;
   }
   .coffee {
     position: absolute;
@@ -112,4 +110,5 @@ export default {
     height: 600px;
     z-index: 100;
   }
+
 </style>
