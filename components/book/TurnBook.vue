@@ -11,8 +11,8 @@
         <div class="flip_page_double hard" id="front_cover_back"></div>
         <div class="front_empty"></div>
         <template v-for="item in getDiaryList">
-          <left-page :content="item.content" :date="item.date" :key="item.id" />
-          <right-page :image="item.image" :key="item.id" />
+          <left-page :content="item.content" :date="item.date" :key="item.uid" />
+          <right-page :image="item.image" :key="item.uid" />
         </template>
         <cache/>
         <div class="flip_page_double hard" id="back_cover_back"></div>
@@ -20,6 +20,16 @@
       </fw-turn>
     </div>
     <!-- <button @click="check">check</button> -->
+    <div class="edit" v-if="nowEdit">
+      <edit-page
+        :content="content"
+        :date="date"
+        :image="image"
+        :nowEdit="nowEdit"
+        v-on:edited="nowEdit=!nowEdit"
+      />
+    </div>
+    <button class="edit" @click="nowEdit=!nowEdit">編集</button>
   </div>
 </template>
 
@@ -29,15 +39,25 @@ import LeftPage from './LeftPage.vue'
 import RightPage from './RightPage.vue'
 import BackCover from './BackCover.vue'
 import FrontCover from './FrontCover.vue'
+import EditPage from './EditPage.vue'
 import Cache from './Cache.vue'
 
 export default {
+  data () {
+    return {
+      nowEdit:false,
+      content: 'sample',
+      date: '2021-10-1',
+      image: ''
+    }
+  },
   components: { 
     FwTurn,
     LeftPage,
     RightPage,
     BackCover,
     FrontCover,
+    EditPage,
     Cache
   },
   computed: {
@@ -54,12 +74,27 @@ export default {
       // this.$refs.fwTurn.goTo(this.$refs.fwTurn.currentPage+2)
       console.log(this.$refs.fwTurn)
     }
+  },
+  watch: {
+    nowEdit() {
+      let number = ((this.$refs.fwTurn.currentPage-2)/2)-1
+      console.log(number)
+      if (!Number.isInteger(number)) {
+        number-= 0.5
+      }
+      const data = this.getDiaryList[number]
+      this.content = data.content
+      this.date = data.date
+      this.image = data.image
+      console.log(data, number)
+    }
   }
 }
 </script>
 
 <style scoped>
   .turn-grid {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -87,6 +122,9 @@ export default {
     background-repeat: no-repeat;
     background-size: cover;
   }
+  .edit {
+    position: absolute;
+  }
   #back_cover_back {
     box-shadow: inset rgb(0 0 0 / 30%) 10px 0px 14px 7px !important;
   }
@@ -110,5 +148,4 @@ export default {
     height: 600px;
     z-index: 100;
   }
-
 </style>
