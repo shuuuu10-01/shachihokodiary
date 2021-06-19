@@ -46,8 +46,8 @@ export default {
 <style scoped>
 .svg_field {
   display: flex;
-  width: 600px;
-  height: 500px;
+  width: 500px;
+  height: 600px;
   flex-wrap: wrap;
   align-content: flex-start;
   background-image: url(https://www.beiz.jp/images_P/paper/paper_00108.jpg);

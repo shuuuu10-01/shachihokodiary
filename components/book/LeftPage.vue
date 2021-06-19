@@ -1,13 +1,13 @@
 <template>
   <div class="page">
-    <p>leftpage</p>
-    <img src="https://placehold.jp/500x500.png">
-    <p>{{ content }}</p>
+    <SVGAnimation :text="content"/>
   </div>
 </template>
 
 <script>
+import SVGAnimation from '../kanjivg/SVGAnimation.vue'
 export default {
+  components: { SVGAnimation },
   props: {
     content: {
       type: String,
