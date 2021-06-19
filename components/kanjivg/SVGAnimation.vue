@@ -49,8 +49,8 @@ export default {
 <style scoped>
 .svg_field {
   display: flex;
-  width: 500px;
-  height: 506px;
+  width: 385px;
+  height: 430px;
   flex-wrap: wrap;
   align-content: flex-start;
   padding: 20px;
