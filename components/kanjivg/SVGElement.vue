@@ -45,8 +45,8 @@ export default {
 
 <style scoped>
 svg {
-  width: 40px;
-  height: 40px;
+  width: 25px;
+  height: 25px;
   border-bottom: solid 1px;
 }
 </style>

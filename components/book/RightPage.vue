@@ -1,7 +1,8 @@
 <template>
   <div class="page">
-    <p>rightpage</p>
-    <img :src="image" alt="diary">
+    <img id="main" :src="image" alt="diary">
+    <img id="right" src="@/assets/img/tape_right.png" alt="tape">
+    <img id="left" src="@/assets/img/tape_left.png" alt="tape">
   </div>
 </template>
 
@@ -18,6 +19,29 @@ export default {
 
 <style scoped>
 .page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: white;
+  background-image: url(https://www.beiz.jp/images_P/paper/paper_00108.jpg);
+  box-shadow: inset rgb(0 0 0 / 30%) 10px 0px 14px 7px !important
+}
+.page img {
+  max-width: 400px;
+  height: 400px;
+  object-fit: cover;
+}
+.page img#main {
+  box-shadow: rgb(0 0 0 / 30%) -2px 2px 5px 1px !important;
+}
+.page img#left {
+  position: absolute;
+  left: -29px;
+  bottom: -36px;
+}
+.page img#right {
+  position: absolute;
+  right: -42px;
+  top: -36px;
 }
 </style>
