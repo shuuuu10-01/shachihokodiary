@@ -1,25 +1,10 @@
 <template>
   <div>
     <Nuxt />
-    <a href="https://www.freepik.com/photos/background" class="bg-photolink">Background photo created by freepik - www.freepik.com</a>
   </div>
 </template>
 
 <style>
-body {
-  background: url("../assets/img/bg_wood.jpg") no-repeat fixed;
-  background-size: 1980px 1024px;
-  text-align: center;
-  z-index: 0;
-}
-
-.bg-photolink {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  color: rgb(153, 153, 153);
-}
-
 html {
   font-family:
     'Source Sans Pro',
