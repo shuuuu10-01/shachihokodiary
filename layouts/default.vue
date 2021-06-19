@@ -10,6 +10,10 @@ body {
   background-size: cover;
   text-align: center;
   z-index: 0;
+  overflow: hidden;
+}
+img {
+  -webkit-user-drag: none;
 }
 /* 
 html {
