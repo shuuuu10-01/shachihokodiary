@@ -5,15 +5,19 @@
         class="turn"
         ref="fwTurn"
       >
-        <div class="flip_page_double hard">表紙</div>
+        <front-cover/>
+        <div class="flip_page_double hard">空白</div>
+        <div class="flip_page_double hard">空白</div>
         <template v-for="item in getDiaryList">
           <left-page :content="item.content" :date="item.date" :key="item.id" />
           <right-page :image="item.image" :key="item.id" />
         </template>
-        <div class="flip_page_double hard">裏表紙</div>
+        <div class="flip_page_double hard">コピーライト</div>
+        <div class="flip_page_double hard" id="back_cover_back">裏表紙の裏</div>
+        <back-cover />
       </fw-turn>
     </div>
-    <!--<button @click="check">check</button>-->
+    <!-- <button @click="check">check</button> -->
   </div>
 </template>
 
@@ -21,12 +25,16 @@
 import { FwTurn } from "vue-turnjs"
 import LeftPage from './LeftPage.vue'
 import RightPage from './RightPage.vue'
+import BackCover from './BackCover.vue'
+import FrontCover from './FrontCover.vue'
 
 export default {
   components: { 
     FwTurn,
     LeftPage,
-    RightPage 
+    RightPage,
+    BackCover,
+    FrontCover
   },
   computed: {
     getDiaryList () {
@@ -53,18 +61,25 @@ export default {
     align-items: center;
     grid-template-columns: 1fr 1fr;
     width: 100%;
-    height: 800px;
+    /* height: 800px; */
+    margin-top: 5%;
   }
   .turn {
-    height: 600px;
+    height: 535px;
   }
   .flip_page_double {
-    width: 1000px;
-    height: 600px;
+    width: 760px;
+    height: 535px;
     text-align: center;
     line-height: 300px;
     vertical-align: middle;
-    background: url("https://placehold.jp/500x600.png");
-    background-size: 500px 600px;
+    background: url("https://placehold.jp/380x535.png");
+    background-size: 300px 400px;
+  }
+
+  #back_cover_back {
+    background-image: url("../../assets/img/back_cover_back.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 </style>
