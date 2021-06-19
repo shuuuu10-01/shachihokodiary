@@ -9,8 +9,8 @@
         <div class="flip_page_double hard">空白</div>
         <div class="flip_page_double hard">空白</div>
         <template v-for="item in getDiaryList">
-          <left-page :content="item.content" :date="item.date" :key="item.id" />
-          <right-page :image="item.image" :key="item.id" />
+          <left-page :content="item.content" :date="item.date" :key="item.uid" />
+          <right-page :image="item.image" :key="item.uid" />
         </template>
         <div class="flip_page_double hard">コピーライト</div>
         <div class="flip_page_double hard" id="back_cover_back">裏表紙の裏</div>
