@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div>
     {{ get_user }}
     {{ get_nowlogin }}
     <turn-book />
@@ -20,10 +20,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-.container {
-  max-width: 100vw;
-  max-height: 100vh;
-}
-</style>
