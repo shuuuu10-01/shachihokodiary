@@ -2,7 +2,7 @@
   <div class="turn-grid">
     <div>
       <img src="../../assets/img/coffee.png" class="coffee" @click="clickPost"/>
-      <img src="../../assets/img/pen_on_table.png" class="pen_on_table" @click="nowEdit=!nowEdit"/>
+      <img src="../../assets/img/pen_on_table.png" class="pen_on_table" @click="nowEdit=!nowEdit" v-if="!nowEdit"/>
       <fw-turn 
         class="turn"
         ref="fwTurn"
