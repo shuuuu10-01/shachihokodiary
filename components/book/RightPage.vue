@@ -87,4 +87,8 @@ export default {
   right: -29px;
   top: 15px;
 }
+label {
+  width: 300px;
+  height: 300px;
+}
 </style>

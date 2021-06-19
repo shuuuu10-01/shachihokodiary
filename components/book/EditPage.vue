@@ -1,13 +1,13 @@
 <template>
   <div class="edit-wrap">
     <div class="leftpage">
-      <left-page :content="text_model" :date="date" />
+      <left-page :content="text_model" :date="date" ref="left"/>
     </div>
     <div class="rightpage">
-      <right-page :image="image_model" :edit="true"/>
+      <right-page :image="image_model" :edit="true" ref="right"/>
     </div>
-    <br />
     <textarea v-model="text_model" />
+    <button @click="clickPost">編集完了</button>
   </div>
 </template>
 
@@ -21,7 +21,7 @@ export default {
   },
   data() {
     return {
-      text_model: 'sample',
+      text_model: '',
       image_model: '',
     }
   },
@@ -50,6 +50,11 @@ export default {
   created() {
     this.text_model = this.content
     this.image_model = this.image
+  },
+  methods: {
+    clickPost () {
+      this.$refs.left.draw()
+    }
   }
 }
 </script>
@@ -73,5 +78,8 @@ textarea {
   width: 60%;
   height: 50px;
   resize: vertical;
+}
+button {
+  position: absolute;
 }
 </style>

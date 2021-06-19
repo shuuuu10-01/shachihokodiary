@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <p>{{ dateDisplay() }}</p>
-    <SVGAnimation :text="content"/>
+    <SVGAnimation :text="content" ref="svg" />
   </div>
 </template>
 
@@ -23,6 +23,9 @@ export default {
     dateDisplay() {
       const date_format = this.date.split("-")
       return date_format[0] + "年" + date_format[1] + "月" + date_format[2] + "日"
+    },
+    draw () {
+      this.$refs.svg.draw()
     }
   }
 }
