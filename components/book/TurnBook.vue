@@ -1,8 +1,8 @@
 <template>
   <div class="turn-grid">
     <div>
-      <img src="../../assets/img/coffee.png" class="coffee"/>
-      <img src="../../assets/img/pen_on_table.png" class="pen_on_table"/>
+      <img src="../../assets/img/coffee.png" class="coffee" @click="clickPost"/>
+      <img src="../../assets/img/pen_on_table.png" class="pen_on_table" @click="nowEdit=!nowEdit"/>
       <fw-turn 
         class="turn"
         ref="fwTurn"
@@ -27,9 +27,10 @@
         :image="image"
         :nowEdit="nowEdit"
         v-on:edited="nowEdit=!nowEdit"
+        ref="edit"
       />
     </div>
-    <button class="edit" @click="nowEdit=!nowEdit">編集</button>
+    <!-- <button class="edit" @click="nowEdit=!nowEdit">編集</button> -->
   </div>
 </template>
 
@@ -73,7 +74,14 @@ export default {
     check() {
       // this.$refs.fwTurn.goTo(this.$refs.fwTurn.currentPage+2)
       console.log(this.$refs.fwTurn)
+    },
+    clickPost() {
+    if (this.nowEdit) {
+      this.$refs.edit.clickPost()
+    } else {
+      return false
     }
+  }
   },
   watch: {
     nowEdit() {
@@ -140,6 +148,7 @@ export default {
     right: 60%;
     bottom: 60%;
     height: 600px;
+    cursor: pointer;
   }
   .pen_on_table {
     position: absolute;
@@ -147,5 +156,6 @@ export default {
     bottom: 30%;
     height: 600px;
     z-index: 100;
+    cursor: pointer;
   }
 </style>

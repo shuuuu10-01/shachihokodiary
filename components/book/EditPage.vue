@@ -3,7 +3,7 @@
     <left-page :content="text_model" :date="date" ref="left"/>
     <right-page :image="image_model" :edit="true" ref="right"/>
     <textarea v-model="text_model" />
-    <button @click="clickPost">編集完了</button>
+    <!-- <button @click="clickPost">編集完了</button> -->
   </div>
 </template>
 
@@ -86,8 +86,5 @@ textarea {
   width: 60%;
   height: 50px;
   resize: vertical;
-}
-button {
-  position: absolute;
 }
 </style>

@@ -102,5 +102,6 @@ export default {
 label {
   width: 300px;
   height: 300px;
+  cursor: pointer;
 }
 </style>
