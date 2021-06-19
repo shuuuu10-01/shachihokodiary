@@ -110,5 +110,6 @@ export default {
     left: 75%;
     bottom: 30%;
     height: 600px;
+    z-index: 100;
   }
 </style>
