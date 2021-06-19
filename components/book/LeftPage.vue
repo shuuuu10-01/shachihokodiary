@@ -29,6 +29,10 @@ export default {
 </script>
 
 <style scoped>
+@font-face {
+	font-family: 'MyFont2';
+	src: url(../../assets/font/NewTegomin-Regular.ttf);
+}
 .page {
   background-image: url(https://www.beiz.jp/images_P/paper/paper_00108.jpg);
   text-align: left;
@@ -39,5 +43,6 @@ export default {
   padding-left: 20px;
   border-bottom: solid 1px;
   border-bottom-style: dotted;
+  font-family: MyFont2;
 }
 </style>
