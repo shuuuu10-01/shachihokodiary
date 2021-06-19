@@ -17,17 +17,26 @@ export default {
 
 
 <style>
+@font-face {
+	font-family: 'MyFont1';
+	src: url(../../assets/font/DancingScript-VariableFont_wght.ttf);
+}
+@font-face {
+	font-family: 'MyFont2';
+	src: url(../../assets/font/NewTegomin-Regular.ttf);
+}
 .front-cover {
     position: relative;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 50px;
-    border-bottom-right-radius: 50px;
-    border-bottom-left-radius: 0px;
+    text-align: center;
 }
 .front-cover p {
+    position: relative;
     z-index: 100;
-    position: absolute;
-    top: 50%;
+    top: 290px;
+    margin-left: 30px;
+    font-family: MyFont1, MyFont2;
+    color: rgb(255, 255, 231);
+    font-size: 15px;
 }
 .front-cover img {
     position: absolute;
