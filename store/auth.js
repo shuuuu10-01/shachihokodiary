@@ -4,7 +4,8 @@ const diaryRef = db.collection('diary')
 
 export const state = () => ({
   user: null,
-  diaryList: []
+  diaryList: [],
+  replaceList: []
 })
 
 export const getters = {
@@ -15,7 +16,7 @@ export const getters = {
     return !!state.user
   },
   getDiaryList(state) {
-    return state.diaryList
+    return state.replaceList;
   }
 }
 
@@ -28,6 +29,24 @@ export const mutations = {
   },
   clearDiary(state) {
     state.diaryList = []
+  },
+  replaceDiary(state) {
+    var today = new Date().getDate();
+    const startDay = "2021-6-";
+    for (let d = 1; d <= today; d++){
+      const find = state.diaryList.find(({date}) => date === startDay + String(d));
+      if(find){
+        state.replaceList.push(find);
+      } else {
+        const defaultData = {
+          user_id: state.user.id,
+          content: "今日もいい日だった",
+          image: "https://placehold.jp/500x500.png",
+          date: startDay + String(d)
+        };
+        state.replaceList.push(defaultData);
+      }
+    }
   }
 }
 
@@ -62,6 +81,7 @@ export const actions = {
           commit('addDiary', doc.data())
         })
       })
+    commit("replaceDiary");
   },
   postDiary({ commit, state }, { content, date, image }) {
     const postData = {

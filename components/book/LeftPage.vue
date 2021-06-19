@@ -22,7 +22,6 @@ export default {
   methods: {
     dateDisplay() {
       const date_format = this.date.split("-")
-      console.log(date_format)
       return date_format[0] + "年" + date_format[1] + "月" + date_format[2] + "日"
     }
   }
