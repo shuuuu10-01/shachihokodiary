@@ -50,7 +50,7 @@ export default {
 .svg_field {
   display: flex;
   width: 500px;
-  height: 600px;
+  height: 554px;
   flex-wrap: wrap;
   align-content: flex-start;
   padding: 10px;
