@@ -7,7 +7,7 @@
       >
         <div class="flip_page_double hard">表紙</div>
         <template v-for="item in getDiaryList">
-          <left-page :content="item.content" :key="item.id" />
+          <left-page :content="item.content" :date="item.date" :key="item.id" />
           <right-page :image="item.image" :key="item.id" />
         </template>
         <div class="flip_page_double hard">裏表紙</div>

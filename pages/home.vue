@@ -3,10 +3,6 @@
     {{ get_user }}
     {{ get_nowlogin }}
     <turn-book />
-    <div class="button_field">
-      <button @click="draw()">Draw</button>
-      <button @click="reset()">Reset</button>
-    </div>
   </div>
 </template>
 
