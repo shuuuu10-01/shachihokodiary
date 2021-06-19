@@ -1,6 +1,8 @@
 <template>
   <div class="page">
-    <img :src="image" alt="diary">
+    <img id="main" :src="image" alt="diary">
+    <img id="right" src="@/assets/img/tape_right.png" alt="tape">
+    <img id="left" src="@/assets/img/tape_left.png" alt="tape">
   </div>
 </template>
 
@@ -28,5 +30,18 @@ export default {
   max-width: 400px;
   height: 400px;
   object-fit: cover;
+}
+.page img#main {
+  box-shadow: rgb(0 0 0 / 30%) -2px 2px 5px 1px !important;
+}
+.page img#left {
+  position: absolute;
+  left: -29px;
+  bottom: -36px;
+}
+.page img#right {
+  position: absolute;
+  right: -42px;
+  top: -36px;
 }
 </style>
