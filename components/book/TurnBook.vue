@@ -18,12 +18,13 @@
       </fw-turn>
     </div>
     <!-- <button @click="check">check</button> -->
-    <div class="edit">
+    <div class="edit" v-if="nowEdit">
       <edit-page
-        v-if="nowEdit"
         :content="content"
         :date="date"
         :image="image"
+        :nowEdit="nowEdit"
+        v-on:edited="nowEdit=!nowEdit"
       />
     </div>
     <button class="edit" @click="nowEdit=!nowEdit">編集</button>

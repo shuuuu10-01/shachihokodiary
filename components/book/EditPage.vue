@@ -1,5 +1,5 @@
 <template>
-  <div class="edit-wrap">
+  <div class="edit-wrap" v-if="nowEdit">
     <div class="leftpage">
       <left-page :content="text_model" :date="date" ref="left"/>
     </div>
@@ -37,6 +37,10 @@ export default {
     image: {
       type: String,
       required: true
+    },
+    nowEdit: {
+      type: Boolean,
+      required: true
     }
   },
   watch: {
@@ -52,8 +56,16 @@ export default {
     this.image_model = this.image
   },
   methods: {
-    clickPost () {
+    async clickPost () {
       this.$refs.left.draw()
+      const imageUrl = await this.$refs.right.createUrl()
+      const postData = {
+        content: this.text_model,
+        date: this.date,
+        image: imageUrl
+      }
+      await this.$store.dispatch('auth/postDiary',postData)
+      this.$emit('edited')
     }
   }
 }

@@ -19,6 +19,8 @@
 </template>
 
 <script>
+import  firebase from '~/plugins/firebase.js'
+
 export default {
   data() {
     return {
@@ -55,6 +57,15 @@ export default {
       }
       const refs = this.$refs.preview
       refs.value = ''
+    },
+    async createUrl () {
+      if (this.image === this.image_model) { return this.image_model }
+      const firestorage = firebase.storage()
+      const Refs = 'image/' + this.fileName
+      const storageRef = await firestorage.ref(Refs)
+      const snapshot = await storageRef.put(this.file)
+      const url = await snapshot.ref.getDownloadURL()
+      return url
     }
   }
 }

@@ -83,20 +83,30 @@ export const actions = {
       })
     commit("replaceDiary");
   },
-  postDiary({ commit, state }, { content, date, image }) {
+  async postDiary({ commit, state }, { content, date, image }) {
     const postData = {
       user_id: state.user.id,
       content: content,
       date: date,
       image: image
     }
-    diaryRef.add(postData)
-    .then(result => {
-      console.log(result)
-      commit('addDiary', postData)
-    })
-    .catch(error => {
-      console.log('error', error)
-    })
+    const find = state.diaryList.find(({item}) => item === date);
+    if (find) {
+      diaryRef
+        .doc(find.id)
+        .update(postData)
+      this.fetchDiaryList()
+    } else {
+      diaryRef
+        .add(postData)
+        .then(result => {
+          console.log(result);
+          commit("addDiary", postData);
+          commit("replaceDiary");
+        })
+        .catch(error => {
+          console.log("error", error);
+        });
+    }
   }
 }
