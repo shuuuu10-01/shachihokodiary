@@ -107,8 +107,8 @@ export default {
   }
   .pen_on_table {
     position: absolute;
-    right: 60%;
-    bottom: 60%;
+    left: 75%;
+    bottom: 30%;
     height: 600px;
   }
 </style>
