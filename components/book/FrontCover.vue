@@ -16,7 +16,7 @@ export default {
 </script>
 
 
-<style>
+<style scoped>
 @font-face {
 	font-family: 'MyFont1';
 	src: url(../../assets/font/DancingScript-VariableFont_wght.ttf);
@@ -32,7 +32,7 @@ export default {
 .front-cover p {
     position: relative;
     z-index: 100;
-    top: 290px;
+    top: 140px;
     margin-left: 30px;
     font-family: MyFont1, MyFont2;
     color: rgb(255, 255, 231);

@@ -6,7 +6,7 @@
 </template>
 
 
-<style>
+<style scoped>
 .back-cover {
     position: relative;
 }

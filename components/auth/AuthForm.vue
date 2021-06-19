@@ -107,7 +107,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 @font-face {
 	font-family: 'MyFont1';
 	src: url(../../assets/font/DancingScript-VariableFont_wght.ttf);
