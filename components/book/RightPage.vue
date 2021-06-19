@@ -28,6 +28,7 @@ export default {
 }
 .page img {
   height: 300px;
+  width: 300px;
   object-fit: cover;
 }
 .page img#main {

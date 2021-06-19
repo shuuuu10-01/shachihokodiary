@@ -29,6 +29,7 @@ export default {
           import(`@/node_modules/@madcat/kanjivg/dist/main/${this.name}.svg`);
     }
   },
+  /*
   updated: function() {
     this.$anime({
       targets: "path",
@@ -40,6 +41,7 @@ export default {
       }
     });
   }
+  */
 };
 </script>
 
