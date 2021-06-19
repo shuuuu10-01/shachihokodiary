@@ -82,6 +82,7 @@ export default {
 }
 .page img, label img {
   height: 300px;
+  width: 300px;
   object-fit: cover;
 }
 .page img#main, label img#main {
@@ -90,13 +91,13 @@ export default {
 }
 .page img#left {
   position: absolute;
-  left: -19px;
-  bottom: 16px;
+  left: -39px;
+  bottom: 32px; 
 }
 .page img#right {
   position: absolute;
-  right: -29px;
-  top: 15px;
+  right: -52px;
+  top: 31px;
 }
 label {
   width: 300px;

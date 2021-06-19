@@ -1,7 +1,6 @@
 <template>
   <div>
     <Nuxt />
-    <a href="https://www.freepik.com/photos/background" class="bg-photolink">Background photo created by freepik - www.freepik.com</a>
   </div>
 </template>
 
@@ -12,14 +11,7 @@ body {
   text-align: center;
   z-index: 0;
 }
-
-.bg-photolink {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  color: rgb(153, 153, 153);
-}
-
+/* 
 html {
   font-family:
     'Source Sans Pro',
@@ -73,5 +65,5 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
-}
+} */
 </style>

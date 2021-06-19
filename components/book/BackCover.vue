@@ -6,13 +6,9 @@
 </template>
 
 
-<style>
+<style scoped>
 .back-cover {
     position: relative;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 50px;
-    border-bottom-right-radius: 50px;
-    border-bottom-left-radius: 0px;
 }
 .back-cover img {
     position: absolute;

@@ -1,20 +1,22 @@
 <template>
   <div class="turn-grid">
     <div>
+      <img src="../../assets/img/coffee.png" class="coffee"/>
+      <img src="../../assets/img/pen_on_table.png" class="pen_on_table"/>
       <fw-turn 
         class="turn"
         ref="fwTurn"
       >
-        <front-cover/>
-        <div class="flip_page_double hard">空白</div>
-        <div class="flip_page_double hard">空白</div>
+        <front-cover class="flip_page_double hard"/>
+        <div class="flip_page_double hard" id="front_cover_back"></div>
+        <div class="front_empty"></div>
         <template v-for="item in getDiaryList">
           <left-page :content="item.content" :date="item.date" :key="item.uid" />
           <right-page :image="item.image" :key="item.uid" />
         </template>
-        <div class="flip_page_double hard">コピーライト</div>
-        <div class="flip_page_double hard" id="back_cover_back">裏表紙の裏</div>
-        <back-cover />
+        <cache/>
+        <div class="flip_page_double hard" id="back_cover_back"></div>
+        <back-cover class="flip_page_double hard"/>
       </fw-turn>
     </div>
     <!-- <button @click="check">check</button> -->
@@ -38,6 +40,7 @@ import RightPage from './RightPage.vue'
 import BackCover from './BackCover.vue'
 import FrontCover from './FrontCover.vue'
 import EditPage from './EditPage.vue'
+import Cache from './Cache.vue'
 
 export default {
   data () {
@@ -54,7 +57,8 @@ export default {
     RightPage,
     BackCover,
     FrontCover,
-    EditPage
+    EditPage,
+    Cache
   },
   computed: {
     getDiaryList () {
@@ -113,12 +117,35 @@ export default {
     background-size: 300px 400px;
   }
 
-  #back_cover_back {
+  #back_cover_back, #front_cover_back {
     background-image: url("../../assets/img/back_cover_back.jpg");
     background-repeat: no-repeat;
     background-size: cover;
   }
   .edit {
     position: absolute;
+  }
+  #back_cover_back {
+    box-shadow: inset rgb(0 0 0 / 30%) 10px 0px 14px 7px !important;
+  }
+  #front_cover_back{
+    box-shadow: inset rgb(0 0 0 / 30%) -10px 0px 14px 7px !important;
+  }
+  .front_empty {
+    background-image: url(https://www.beiz.jp/images_P/paper/paper_00108.jpg);
+    box-shadow: inset rgb(0 0 0 / 30%) 10px 0px 14px 7px !important;
+  }
+  .coffee {
+    position: absolute;
+    right: 60%;
+    bottom: 60%;
+    height: 600px;
+  }
+  .pen_on_table {
+    position: absolute;
+    left: 75%;
+    bottom: 30%;
+    height: 600px;
+    z-index: 100;
   }
 </style>

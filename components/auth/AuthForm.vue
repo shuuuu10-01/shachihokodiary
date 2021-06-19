@@ -107,10 +107,14 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 @font-face {
 	font-family: 'MyFont1';
 	src: url(../../assets/font/DancingScript-VariableFont_wght.ttf);
+}
+@font-face {
+	font-family: 'MyFont2';
+	src: url(../../assets/font/NewTegomin-Regular.ttf);
 }
 .close_note {
   position: absolute;
@@ -135,7 +139,7 @@ export default {
   padding-top: 273px;
   font-size: 15px;
   line-height: 20px;
-  font-family: MyFont1;
+  font-family: MyFont1, MyFont2;
   color: rgb(255, 255, 231);
 }
 

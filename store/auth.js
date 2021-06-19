@@ -41,7 +41,7 @@ export const mutations = {
       } else {
         const defaultData = {
           user_id: state.user.id,
-          content: "今日もいい日だった",
+          content: "今日もいい日だったうおおおおおおおおおおおおおおおおおおおおおおおおおおおお",
           image: "https://placehold.jp/500x500.png",
           date: startDay + String(d)
         };
