@@ -12,19 +12,18 @@ export default {
     }
   },
   data: () => ({
-    no_svgs: ["03000", "00020"],
+    no_svgs: ["03000", "00020", "0300c", "0300d"],
     no_svgs_flag: false
   }),
   computed: {
     svg() {
       this.no_svgs.forEach(no_svg => {
-        if(this.name == no_svg) {
+        if (this.name == no_svg) {
           this.no_svgs_flag = true;
         }
       });
-      if(this.no_svgs_flag)
-        return () =>
-          import(`@/assets/svg/${this.name}.svg`);
+      if (this.no_svgs_flag)
+        return () => import(`@/assets/svg/${this.name}.svg`);
       else
         return () =>
           import(`@/node_modules/@madcat/kanjivg/dist/main/${this.name}.svg`);
