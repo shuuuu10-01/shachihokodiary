@@ -13,7 +13,7 @@
         <div class="flip_page_double hard">裏表紙</div>
       </fw-turn>
     </div>
-    <button @click="check">check</button>
+    <!--<button @click="check">check</button>-->
   </div>
 </template>
 
@@ -48,7 +48,9 @@ export default {
 
 <style scoped>
   .turn-grid {
-    display: grid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     grid-template-columns: 1fr 1fr;
     width: 100%;
     height: 800px;
