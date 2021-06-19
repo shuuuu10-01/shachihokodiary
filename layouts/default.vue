@@ -8,7 +8,7 @@
 <style>
 body {
   background: url("../assets/img/bg_wood.jpg") no-repeat fixed;
-  background-size: 1980px 1024px;
+  background-size: cover;
   text-align: center;
   z-index: 0;
 }
