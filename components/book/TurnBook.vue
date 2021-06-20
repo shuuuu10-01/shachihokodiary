@@ -102,6 +102,11 @@ export default {
       this.date = data.date
       this.image = data.image
       console.log(data, number)
+    },
+    watch: {
+      getDiaryList() {
+        console.log(this.getDiaryList, "watch")
+      }
     }
   }
 }

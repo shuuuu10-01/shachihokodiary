@@ -13,7 +13,7 @@
       <img id="main" :src="image_model" alt="diary">
     </label>
     <img id="main" :src="image_model" alt="diary" v-if="!edit">
-    <img id="right" src="@/assets/img/tape_right.png" alt="tape">
+    <img id="right" src="@/assets/img/tape_right.png" alt="tape" v-if="!edit">
     <img id="left" src="@/assets/img/tape_left.png" alt="tape" v-if="!edit">
   </div>
 </template>
