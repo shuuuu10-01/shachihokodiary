@@ -99,15 +99,17 @@ export const actions = {
       });
     commit("replaceDiary");
   },
-  postDiary({ commit, state }, { content, date, image }) {
+  async postDiary({ commit, state }, { content, date, image }) {
     const postData = {
       user_id: state.user.id,
       content: content,
       date: date,
       image: image
     };
-    console.log(state.diaryList, date);
-    const find = state.diaryList.find(({date}) => date === date);
+    console.log(image, date);
+    const find = await state.diaryList.find((item) => {
+      return (item.date === date);
+    });
     console.log(find, "find");
     if (find) {
       diaryRef.doc(find.id).update(postData);
