@@ -53,6 +53,7 @@
   margin-left: auto;
   margin-right: auto;
   z-index: 100;
+  display: none;
 }
 
 #pen {
