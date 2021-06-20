@@ -2,7 +2,8 @@
   <div class="turn-grid">
     <div>
       <img src="../../assets/img/coffee.png" class="coffee" @click="clickPost"/>
-      <img src="../../assets/img/pen_on_table.png" class="pen_on_table" @click="clickPen" v-if="!nowEdit"/>
+      <img src="../../assets/img/pen_on_table1.png" class="pen_on_table" @click="clickPen" v-if="!nowEdit"/>
+      <img src="../../assets/img/eraser_on_table.png" class="eraser_on_table"/>
       <fw-turn 
         class="turn"
         ref="fwTurn"
@@ -157,17 +158,26 @@ export default {
   }
   .coffee {
     position: absolute;
-    right: 60%;
+    right: 70%;
     bottom: 60%;
-    height: 600px;
+    height: 450px;
     cursor: pointer;
   }
   .pen_on_table {
     position: absolute;
     left: 75%;
-    bottom: 30%;
-    height: 600px;
+    bottom: 25%;
+    height: 340px;
+    width: auto;
     z-index: 100;
     cursor: pointer;
+  }
+  .eraser_on_table {
+    position: absolute;
+    left: 80%;
+    bottom: 60%;
+    height: 200px;
+    width: auto;
+    z-index: 99;
   }
 </style>
