@@ -33,19 +33,41 @@ export default {
           import(`@/node_modules/@madcat/kanjivg/dist/main/${this.name}.svg`);
     }
   },
+  methods: {
+    animSvg() {
+      if(this.nowEdit) {
+        this.$anime({
+          targets: ".edit path",
+          strokeDashoffset: [this.$anime.setDashoffset, 0],
+          easing: "easeInOutSine",
+          duration: 500,
+          delay: function(el, i) {
+            return i * 250;
+          }
+        });
+      }
+    },
+    reverseAnimSvg() {
+      if(this.nowEdit) {
+        this.$anime({
+          targets: ".edit path",
+          strokeDashoffset: [this.$anime.setDashoffset, 0],
+          easing: "easeInOutSine",
+          duration: 1000,
+          direction: "reverse",
+          delay: function(el, i) {
+            return i * 1000;
+          }
+        });
+      }
+    },
+  },
   updated: function() {
-    console.log(this.nowEdit)
-    if(this.nowEdit) {
-      this.$anime({
-        targets: ".edit path",
-        strokeDashoffset: [this.$anime.setDashoffset, 0],
-        easing: "easeInOutSine",
-        duration: 500,
-        delay: function(el, i) {
-          return i * 250;
-        }
-      });
-    }
+    // console.log(this.nowEdit)
+    this.animSvg()
+  },
+  destroyed: function() {
+    this.reverseAnimSvg()
   }
 };
 </script>
