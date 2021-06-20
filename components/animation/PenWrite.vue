@@ -1,7 +1,7 @@
 <template>
   <div class="animation_field">
     <img id="pen" src="@/assets/img/pen_write.png" >
-    <!-- <img id="shadow" src="@/assets/img/pen_shadow.png" > -->
+    <img id="shadow" src="@/assets/img/pen_shadow.png" >
   </div>
 </template>
 
@@ -43,31 +43,36 @@
 <style scoped>
 .animation_field {
   position:absolute;
-  top: 10px;
-  left:0;
-  right:0;
-  width: 385px;
-  height: 430px;
-  padding: 20px;
+  top: 22vh;
+  width: 760px;
+  height: 535px;
   margin-left: auto;
   margin-right: auto;
-  z-index: 10000;
+  left:0;
+  right:0;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 100;
 }
 
 #pen {
-  position:relative; top:100px; left:20px;
-  width: 15%;
-  height: 15%;
+  position:relative;
+  top:13px;
+  left: 23px;
+  width: 43%;
+  height: auto;
   display: flex;
-  z-index: 10000;
+  z-index: 100;
 }
 
 #shadow{
-  position:relative; top:50px; left:50px;
-  width: 20%;
-  height: 20%;
+  position:relative;
+  left: -95px;
+  top: -260px;
+  width: 43%;
+  height: auto;
   display: flex;
-  z-index: 10000;
+  z-index: 100;
 }
 
 </style>

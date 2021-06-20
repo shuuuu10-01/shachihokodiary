@@ -109,7 +109,7 @@ export default {
     grid-template-columns: 1fr 1fr;
     width: 100%;
     /* height: 800px; */
-    margin-top: 5%;
+    margin-top: 75px;
   }
   .turn {
     height: 535px;
