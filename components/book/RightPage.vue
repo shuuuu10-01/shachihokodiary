@@ -91,13 +91,17 @@ export default {
 }
 .page img#left {
   position: absolute;
-  left: -39px;
-  bottom: 32px; 
+  left: -36px;
+  bottom: 40.5px; 
+  width: 205px;
+  height: auto;
 }
 .page img#right {
   position: absolute;
-  right: -52px;
-  top: 31px;
+  right: -49px;
+  top: 47px;
+  width: 200px;
+  height: auto;
 }
 label {
   width: 300px;
