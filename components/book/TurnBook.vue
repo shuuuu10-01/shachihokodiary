@@ -2,7 +2,7 @@
   <div class="turn-grid">
     <div>
       <img src="../../assets/img/coffee.png" class="coffee" @click="clickPost"/>
-      <img src="../../assets/img/pen_on_table.png" class="pen_on_table" @click="nowEdit=!nowEdit" v-if="!nowEdit"/>
+      <img src="../../assets/img/pen_on_table.png" class="pen_on_table" @click="clickPen" v-if="!nowEdit"/>
       <fw-turn 
         class="turn"
         ref="fwTurn"
@@ -76,12 +76,19 @@ export default {
       console.log(this.$refs.fwTurn)
     },
     clickPost() {
-    if (this.nowEdit) {
-      this.$refs.edit.clickPost()
-    } else {
-      return false
+      if (this.nowEdit) {
+        this.$refs.edit.clickPost()
+      } else {
+        return false
+      }
+    },
+    clickPen () {
+      console.log(this.getDiaryList.length*2+3,this.$refs.fwTurn.currentPage)
+      if (this.$refs.fwTurn.currentPage <= 3 || ((this.getDiaryList.length)*2+3)<this.$refs.fwTurn.currentPage) {
+      } else {
+        this.nowEdit =!this.nowEdit
+      }
     }
-  }
   },
   watch: {
     nowEdit() {
