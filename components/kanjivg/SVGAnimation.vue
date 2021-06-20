@@ -1,7 +1,7 @@
 <template>
   <div class="svg_field">
     <div class="svg" v-for="svgpath in svgpaths" :key="svgpath.key">
-      <SVGElement v-show="svgpath != '' && btnFlag" :name="svgpath" />
+      <SVGElement v-show="svgpath != '' && btnFlag" :name="svgpath" :nowEdit="nowEdit"/>
     </div>
   </div>
 </template>
