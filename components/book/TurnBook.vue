@@ -72,7 +72,7 @@ export default {
   },
   mounted () {
     console.log('mounted')
-    this.$refs.fwTurn.goTo(this.getDiaryList.length*2)
+    this.$refs.fwTurn.goTo(this.getDiaryList.length*2+3)
   },
   methods: {
     check() {
