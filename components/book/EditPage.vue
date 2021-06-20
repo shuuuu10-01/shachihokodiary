@@ -1,6 +1,6 @@
 <template>
   <div class="edit-wrap" v-if="nowEdit">
-    <left-page :content="text_model" :date="date" ref="left" :nowEdit="nowEdit" @click.native="clickPost"/>
+    <left-page :content="text_model" :date="date" ref="left" :nowEdit="nowEdit" @click.native="clickPost" class="page_left"/>
     <right-page :image="image_model" :edit="true" ref="right"/>
     <textarea v-model="text_model" />
     <!-- <button @click="clickPost">編集完了</button> -->
@@ -111,6 +111,8 @@ textarea {
   height: 50px;
   resize: vertical;
 }
+.page_left {
+  cursor: pointer;
 .drag {
   position: absolute
 }
