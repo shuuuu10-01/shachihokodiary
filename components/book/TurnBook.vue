@@ -72,7 +72,9 @@ export default {
   },
   mounted () {
     console.log('mounted')
-    this.$refs.fwTurn.goTo(this.getDiaryList.length*2+3)
+    setTimeout(() =>{
+      this.$refs.fwTurn.goTo(this.getDiaryList.length*2+3)
+    }, 2000)
   },
   methods: {
     check() {
