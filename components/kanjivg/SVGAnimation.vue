@@ -42,6 +42,11 @@ export default {
   },
   created() {
     this.draw();
+  },
+  watch: {
+    text() {
+      this.draw()
+    }
   }
 };
 </script>
