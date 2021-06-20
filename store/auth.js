@@ -42,7 +42,7 @@ export const mutations = {
         const defaultData = {
           user_id: state.user.id,
           content: "今日もいい日だった",
-          image: "https://placehold.jp/500x500.png",
+          image: "https://placeimg.com/300/300/nature",
           date: startDay + String(d)
         };
         state.replaceList.push(defaultData);
