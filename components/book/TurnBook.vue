@@ -3,7 +3,7 @@
     <div>
       <img src="../../assets/img/coffee.png" class="coffee" @click="clickPost"/>
       <img src="../../assets/img/pen_on_table1.png" class="pen_on_table" @click="clickPen" v-if="!nowEdit"/>
-      <img src="../../assets/img/eraser_on_table.png" class="eraser_on_table"/>
+      <!-- <img src="../../assets/img/eraser_on_table.png" class="eraser_on_table"/> -->
       <fw-turn 
         class="turn"
         ref="fwTurn"

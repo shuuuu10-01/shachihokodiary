@@ -4,21 +4,34 @@
     <right-page :image="image_model" :edit="true" ref="right"/>
     <textarea v-model="text_model" />
     <!-- <button @click="clickPost">編集完了</button> -->
+    <draggable
+      class="drag"
+      @start="draggableStart"
+      @end="nowDrag=false"
+    >
+      <div>
+        <img src="../../assets/img/eraser_on_table.png" height="170px" v-show="!nowDrag" class="eraser"/>
+      </div>
+    </draggable>
   </div>
 </template>
 
 <script>
 import LeftPage from './LeftPage.vue'
 import RightPage from './RightPage.vue'
+import Draggable from "vuedraggable";
+
 export default {
   components: {
     LeftPage,
-    RightPage
+    RightPage,
+    Draggable
   },
   data() {
     return {
       text_model: '',
       image_model: '',
+      nowDrag: false
     }
   },
   props: {
@@ -51,6 +64,9 @@ export default {
     this.text_model = this.content
     this.image_model = this.image
   },
+  mounted() {
+    window.setInterval(this.deleteLast, 1000);
+  },
   methods: {
     async clickPost () {
       this.$refs.left.draw()
@@ -62,6 +78,14 @@ export default {
       }
       await this.$store.dispatch('auth/postDiary',postData)
       this.$emit('edited')
+    },
+    draggableStart() {
+      this.nowDrag = true
+    },
+    deleteLast() {
+      if(this.nowDrag) {
+        this.text_model = this.text_model.slice(0, -1)
+      }
     }
   }
 }
@@ -86,5 +110,13 @@ textarea {
   width: 60%;
   height: 50px;
   resize: vertical;
+}
+.drag {
+  position: absolute
+}
+img.eraser {
+  top: 10px;
+  left: 780px;
+  position: absolute;
 }
 </style>
