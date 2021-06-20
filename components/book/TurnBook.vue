@@ -1,9 +1,11 @@
 <template>
   <div class="turn-grid">
     <div>
-      <img src="../../assets/img/coffee.png" class="coffee" @click="clickPost"/>
+      <img src="../../assets/img/coffee.png" class="coffee" @click="clickDrop" v-if="!nowDrop || (nowDrop && !nowEdit)"/>
       <img src="../../assets/img/pen_on_table1.png" class="pen_on_table" @click="clickPen" v-if="!nowEdit"/>
       <img src="../../assets/img/eraser_on_table.png" class="eraser_on_table"/>
+      <img src="../../assets/img/drop_coffee.png" class="drop_coffee" v-if="nowDrop && nowEdit"/>
+      <img src="../../assets/img/drop_coffee_paper.png" class="drop_coffee_papre" v-if="nowDrop && nowEdit"/>
       <fw-turn 
         class="turn"
         ref="fwTurn"
@@ -48,6 +50,7 @@ export default {
   data () {
     return {
       nowEdit:false,
+      nowDrop:false,
       content: 'sample',
       date: '2021-10-1',
       image: ''
@@ -88,6 +91,12 @@ export default {
       if (this.$refs.fwTurn.currentPage <= 3 || ((this.getDiaryList.length)*2+3)<this.$refs.fwTurn.currentPage) {
       } else {
         this.nowEdit =!this.nowEdit
+        this.nowDrop = false
+      }
+    },
+    clickDrop () {
+      if (this.nowEdit) {
+        this.nowDrop = !this.nowDrop
       }
     }
   },
@@ -158,10 +167,12 @@ export default {
   }
   .coffee {
     position: absolute;
-    right: 70%;
+    right: 80%;
     bottom: 60%;
-    height: 450px;
+    height: 250px;
+    width: auto;
     cursor: pointer;
+    z-index: 2;
   }
   .pen_on_table {
     position: absolute;
@@ -179,5 +190,21 @@ export default {
     height: 200px;
     width: auto;
     z-index: 99;
+  }
+  .drop_coffee {
+    position: absolute;
+    right: 61%;
+    bottom: 53%;
+    height: 450px;
+    cursor: pointer;
+    z-index: 3;
+  }
+  .drop_coffee_papre {
+    position: absolute;
+    right: 56.5%;
+    bottom: 52.8%;
+    height: 300px;
+    width: auto;
+    z-index: 3;
   }
 </style>
