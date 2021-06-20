@@ -1,6 +1,6 @@
 <template>
   <div class="edit-wrap" v-if="nowEdit">
-    <left-page :content="text_model" :date="date" ref="left"/>
+    <left-page :content="text_model" :date="date" :nowEdit="nowEdit" ref="left"/>
     <right-page :image="image_model" :edit="true" ref="right"/>
     <textarea v-model="text_model" />
     <!-- <button @click="clickPost">編集完了</button> -->

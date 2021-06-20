@@ -1,5 +1,5 @@
 <template>
-  <component :is="svg" />
+  <component :is="svg" :class="{edit: nowEdit}"/>
 </template>
 
 <script>
@@ -9,6 +9,10 @@ export default {
       type: String,
       required: true,
       default: "03000"
+    },
+    nowEdit: {
+      type: Boolean,
+      default: false
     }
   },
   data: () => ({
@@ -29,19 +33,20 @@ export default {
           import(`@/node_modules/@madcat/kanjivg/dist/main/${this.name}.svg`);
     }
   },
-  /*
   updated: function() {
-    this.$anime({
-      targets: "path",
-      strokeDashoffset: [this.$anime.setDashoffset, 0],
-      easing: "easeInOutSine",
-      duration: 500,
-      delay: function(el, i) {
-        return i * 250;
-      }
-    });
+    console.log(this.nowEdit)
+    if(this.nowEdit) {
+      this.$anime({
+        targets: ".edit path",
+        strokeDashoffset: [this.$anime.setDashoffset, 0],
+        easing: "easeInOutSine",
+        duration: 500,
+        delay: function(el, i) {
+          return i * 250;
+        }
+      });
+    }
   }
-  */
 };
 </script>
 

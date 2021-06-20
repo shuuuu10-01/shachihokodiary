@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <p>{{ dateDisplay() }}</p>
-    <SVGAnimation :text="content" ref="svg" />
+    <SVGAnimation :text="content" :nowEdit="nowEdit" ref="svg" />
   </div>
 </template>
 
@@ -17,6 +17,10 @@ export default {
     date: { 
       type: String,
       required: true
+    },
+    nowEdit: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {
