@@ -1,7 +1,7 @@
 <template>
   <div class="svg_field">
     <div class="svg" v-for="svgpath in svgpaths" :key="svgpath.key">
-      <SVGElement v-show="svgpath != '' && btnFlag" :name="svgpath" />
+      <SVGElement v-show="svgpath != '' && btnFlag" :name="svgpath" :nowEdit="nowEdit"/>
     </div>
   </div>
 </template>
@@ -16,6 +16,10 @@ export default {
       type: String,
       required: true,
       default: ""
+    },
+    nowEdit: {
+      type: Boolean,
+      default: false
     }
   },
   data: () => ({
@@ -31,7 +35,7 @@ export default {
       this.texts.forEach((value, index) => {
         this.svgpaths[index] = ("000" + value.charCodeAt(0).toString(16)).slice(-5);
       });
-      console.log("svgpaths:[" + this.svgpaths + "]");
+      // console.log("svgpaths:[" + this.svgpaths + "]");
       this.btnFlag = true;
     },
     reset() {
@@ -44,8 +48,11 @@ export default {
     this.draw();
   },
   watch: {
-    text() {
+    text(newValue, oldValue) {
       this.draw()
+      var regexp = new RegExp(oldValue, 'g')
+      var result = newValue.replace(regexp, '')
+      console.log(result)
     }
   }
 };

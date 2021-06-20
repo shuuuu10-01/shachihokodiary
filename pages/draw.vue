@@ -40,6 +40,7 @@ export default {
   align-items: center;
   text-align: center;
   flex-direction: column;
+  background-image: url(https://www.beiz.jp/images_P/paper/paper_00108.jpg);
 }
 
 textarea {

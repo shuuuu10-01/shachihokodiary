@@ -3,9 +3,9 @@
     <div>
       <img src="../../assets/img/coffee.png" class="coffee" @click="clickDrop" v-if="!nowDrop || (nowDrop && !nowEdit)"/>
       <img src="../../assets/img/pen_on_table1.png" class="pen_on_table" @click="clickPen" v-if="!nowEdit"/>
-      <img src="../../assets/img/eraser_on_table.png" class="eraser_on_table"/>
       <img src="../../assets/img/drop_coffee.png" class="drop_coffee" v-if="nowDrop && nowEdit"/>
       <img src="../../assets/img/drop_coffee_paper.png" class="drop_coffee_papre" v-if="nowDrop && nowEdit"/>
+      <!-- <img src="../../assets/img/eraser_on_table.png" class="eraser_on_table"/> -->
       <fw-turn 
         class="turn"
         ref="fwTurn"
@@ -131,7 +131,7 @@ export default {
     grid-template-columns: 1fr 1fr;
     width: 100%;
     /* height: 800px; */
-    margin-top: 5%;
+    margin-top: 75px;
   }
   .turn {
     height: 535px;
