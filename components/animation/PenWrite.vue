@@ -43,7 +43,7 @@
 <style scoped>
 .animation_field {
   position:absolute;
-  top: 22vh;
+  top: 215px;
   width: 760px;
   height: 535px;
   margin-left: auto;
