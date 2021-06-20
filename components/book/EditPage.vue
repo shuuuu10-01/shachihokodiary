@@ -113,6 +113,7 @@ textarea {
 }
 .page_left {
   cursor: pointer;
+}
 .drag {
   position: absolute
 }
