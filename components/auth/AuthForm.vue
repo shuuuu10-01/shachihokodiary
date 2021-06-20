@@ -156,6 +156,9 @@ input {
   border-style: none;
   font-family : inherit;
 }
+input:focus {
+  outline: none;
+}
 
 input:-webkit-autofill {
   -webkit-transition: background-color 9999s;
