@@ -42,6 +42,15 @@
     </div>
     <img src="../../assets/img/pen_on_table.png" class="pen_on_table"/>
     <img src="../../assets/img/coffee.png" class="coffee"/>
+    <div class="route">
+      <a @click="$router.push('/signup')">
+        <p :class="{color: $route.name==='signup'}">signup</p>
+      </a>
+      <p>&nbsp;/&nbsp;</p>
+      <a @click="$router.push('/login')">
+        <p :class="{color: $route.name==='login'}">login</p>
+      </a>
+    </div>
   </div>
 </template>
 
@@ -196,5 +205,21 @@ label {
   position: absolute;
   left: -150%;
   top: -10%;
+}
+.route {
+  position: absolute;
+  display: flex;
+  font-family: MyFont1;
+  color: rgb(255, 255, 231);
+  top: -150px;
+  left: 50%;
+  font-size: 45px;
+  transform: translateX(-50%);
+}
+.route a {
+  cursor: pointer;
+}
+.color {
+  color: #9cacb7;
 }
 </style>
