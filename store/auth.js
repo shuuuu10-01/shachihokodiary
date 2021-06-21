@@ -32,7 +32,8 @@ export const mutations = {
   },
   replaceDiary(state) {
     state.replaceList = []
-    var today = new Date().getDate();
+    // var today = new Date().getDate();
+    var today = 20; //ハッカソンの終了した日付
     const startDay = "2021-6-";
     for (let d = 1; d <= today; d++){
       const find = state.diaryList.find(({date}) => date === startDay + String(d));
