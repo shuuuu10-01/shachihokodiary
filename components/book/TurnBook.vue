@@ -1,6 +1,6 @@
 <template>
   <div class="turn-grid">
-    <div>
+    <div class="diary">
       <img src="../../assets/img/coffee.png" class="coffee" @click="clickDrop" v-if="!nowDrop || (nowDrop && !nowEdit)"/>
       <img src="../../assets/img/pen_on_table1.png" class="pen_on_table" @click="clickPen" v-if="!nowEdit"/>
       <img src="../../assets/img/drop_coffee.png" class="drop_coffee" v-if="nowDrop && nowEdit"/>
@@ -135,6 +135,9 @@ export default {
     /* height: 800px; */
     margin-top: 75px;
   }
+  .diary {
+    position: relative;
+  }
   .turn {
     height: 535px;
     filter: drop-shadow(-3px 5px 10px black);
@@ -169,8 +172,8 @@ export default {
   }
   .coffee {
     position: absolute;
-    right: 80%;
-    bottom: 60%;
+    top: -30px;
+    left: -370px;
     height: 250px;
     width: auto;
     cursor: pointer;
@@ -178,8 +181,8 @@ export default {
   }
   .pen_on_table {
     position: absolute;
-    left: 75%;
-    bottom: 25%;
+    right: -375px;
+    top: 40px;
     height: 340px;
     width: auto;
     z-index: 100;
@@ -195,18 +198,18 @@ export default {
   }
   .drop_coffee {
     position: absolute;
-    right: 61%;
-    bottom: 53%;
+    top: -164px;
+    left: -568px;
     height: 450px;
     cursor: pointer;
     z-index: 3;
   }
   .drop_coffee_papre {
     position: absolute;
-    right: 56.5%;
-    bottom: 52.8%;
+    left: -3px;
+    top: -50px;
     height: 300px;
     width: auto;
-    z-index: 3;
+    z-index: 2;
   }
 </style>
