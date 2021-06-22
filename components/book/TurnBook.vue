@@ -18,7 +18,9 @@
           <right-page :image="item.image" :key="item.uid" />
         </template>
         <cache/>
-        <div class="flip_page_double hard" id="back_cover_back"></div>
+        <div class="flip_page_double hard" id="back_cover_back">
+          <p @click="logout">logout</p>
+        </div>
         <back-cover class="flip_page_double hard"/>
       </fw-turn>
     </div>
@@ -100,6 +102,11 @@ export default {
       if (this.nowEdit) {
         this.nowDrop = !this.nowDrop
       }
+    },
+    async logout () {
+      this.$fire.auth.signOut().then(()=>{
+        this.$router.push('/login')
+      })
     }
   },
   watch: {
@@ -161,7 +168,22 @@ export default {
     position: absolute;
   }
   #back_cover_back {
+    position: relative;
     box-shadow: inset rgb(0 0 0 / 30%) 10px 0px 14px 7px !important;
+  }
+  #back_cover_back p {
+    font-family: MyFont1;
+    cursor: pointer;
+    color: white;
+    position: absolute;
+    font-size: 45px;
+    line-height: 45px;
+    top: 370px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  #back_cover_back p:hover {
+    color: #de524a;
   }
   #front_cover_back{
     box-shadow: inset rgb(0 0 0 / 30%) -10px 0px 14px 7px !important;
