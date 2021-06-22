@@ -5,9 +5,16 @@ in オンライン
 
 ## 開発
 <img width="1440" alt="スクリーンショット 2021-06-21 14 30 34" src="https://user-images.githubusercontent.com/65497260/122711534-45579c00-d29d-11eb-97b4-80238d0da99c.png">
+<img width="1440" alt="スクリーンショット 2021-06-21 21 36 42" src="https://user-images.githubusercontent.com/65497260/122763004-d7c96100-d2d8-11eb-9385-f680ab8e168f.png">
 
 ### 開発テーマ
 「無駄にリアルな日記」 https://shachihokodiary.netlify.app/
+
+テストアカウントとして
+* mail takikun@ikemen.com
+* pass mituhamituha
+
+でログインすることができます。
 
 ### 機能
 * ログイン機能
@@ -18,7 +25,7 @@ in オンライン
 
 ### 使用技術
 * Nuxt.js 2.15.3
-* Firebase　8.6.7
+* Firebase 8.6.7
 
 ### 外部モジュール
 * vue-animejs 2.1.1 
